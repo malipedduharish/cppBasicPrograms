@@ -1,0 +1,35 @@
+//program for operator overloading
+//overloading + operator for adding TWO STRINGS ...
+#include<iostream>
+#include<string>
+
+using namespace std;
+class Test {
+	char st[10];
+public:
+	void getst()
+	{
+		cout << "enter string" << endl;
+		cin >> st;
+	}
+	Test operator +(Test t2)
+	{
+		Test t3;
+		strcpy_s(t3.st, st);
+		strcat_s(t3.st, " ");
+		strcpy_s(t3.st, t2.st);
+		
+		return t3;
+		}
+	
+
+};
+int main()
+{
+	Test t1, t2,t3;
+	t1.getst();
+	t2.getst();
+	t3 = t1 + t2;
+	return 0;
+
+}
